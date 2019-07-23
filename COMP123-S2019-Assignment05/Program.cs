@@ -8,6 +8,8 @@ namespace COMP123_S2019_Assignment05
 {
     static class Program
     {
+        public static Dictionary<string, Form> Forms;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +18,17 @@ namespace COMP123_S2019_Assignment05
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            Forms = new Dictionary<string, Form>();
+
+            Forms.Add("SplashScreen", new SplashScreen());
+            Forms.Add("StartForm", new StartForm());
+            Forms.Add("SelectForm", new SelectForm());
+            Forms.Add("ProductInfoForm", new ProductInfoForm());
+            Forms.Add("OrderForm", new OrderForm());
+
+            //Application.Run(Forms[FormName.SplashScreen.ToString()]);
+            Application.Run(Forms[FormName.StartForm.ToString()]);
         }
     }
 }

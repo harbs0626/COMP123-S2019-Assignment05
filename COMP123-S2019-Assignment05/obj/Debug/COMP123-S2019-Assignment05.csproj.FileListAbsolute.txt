@@ -1,0 +1,12 @@
+C:\Users\301046044\Desktop\COMP123\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\bin\Debug\COMP123-S2019-Assignment05.exe.config
+C:\Users\301046044\Desktop\COMP123\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\bin\Debug\COMP123-S2019-Assignment05.exe
+C:\Users\301046044\Desktop\COMP123\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\bin\Debug\COMP123-S2019-Assignment05.pdb
+C:\Users\301046044\Desktop\COMP123\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123-S2019-Assignment05.csprojAssemblyReference.cache
+C:\Users\301046044\Desktop\COMP123\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123_S2019_Assignment05.Properties.Resources.resources
+C:\Users\301046044\Desktop\COMP123\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123-S2019-Assignment05.csproj.GenerateResource.cache
+C:\Users\301046044\Desktop\COMP123\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123-S2019-Assignment05.csproj.CoreCompileInputs.cache
+C:\Users\301046044\Desktop\COMP123\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123-S2019-Assignment05.exe
+C:\Users\301046044\Desktop\COMP123\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123-S2019-Assignment05.pdb
+C:\Users\301046044\Desktop\COMP123\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123_S2019_Assignment05.StartForm.resources
+C:\Users\301046044\Desktop\COMP123\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123_S2019_Assignment05.ProductInfoForm.resources
+C:\Users\301046044\Desktop\COMP123\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123_S2019_Assignment05.SelectForm.resources
