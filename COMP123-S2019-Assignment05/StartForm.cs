@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,33 @@ namespace COMP123_S2019_Assignment05
         {
             Program.Forms[FormName.SelectForm.ToString()].Show();
             this.Hide();
+        }
+
+        private void OpenSavedOrderButton_Click(object sender, EventArgs e)
+        {
+            this.OpenProductInfoForm();
+        }
+
+        private void OpenProductInfoForm()
+        {
+            Program.Forms[FormName.ProductInfoForm.ToString()].Show();
+            this.Hide();
+        }
+
+        private void ExitForm_Click(object sender, EventArgs e)
+        {
+            DialogResult _dResult =
+                MessageBox.Show("Do you want to exit the program?", "Dollar Computers",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (_dResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void StartForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
