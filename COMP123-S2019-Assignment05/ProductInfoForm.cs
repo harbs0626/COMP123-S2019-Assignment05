@@ -26,7 +26,7 @@ namespace COMP123_S2019_Assignment05
             switch (_dResult)
             {
                 case DialogResult.Yes:
-                    this.OpenSavedOrder();
+                    this.OpenOrderFromFile();
                     break;
                 default:
                     //Do nothing
@@ -34,15 +34,20 @@ namespace COMP123_S2019_Assignment05
             }
         }
 
-        private void OpenSavedOrder()
+        private void ProductInfoFormOpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog _opDiag = new OpenFileDialog();
-            _opDiag.InitialDirectory = Directory.GetCurrentDirectory();
-            _opDiag.Filter = "Text Files (*.txt)|(*.txt)| All Files (*.*)|(*.*)";
-            _opDiag.ShowDialog();
+            this.OpenOrderFromFile();
+        }
+
+        private void OpenOrderFromFile()
+        {
+            OpenFileDialog _openFileDialog = new OpenFileDialog();
+            _openFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            _openFileDialog.Filter = "Text Files (*.txt)|(*.txt)| All Files (*.*)|(*.*)";
+            _openFileDialog.ShowDialog();
 
             string _fileName = string.Empty;
-            _fileName = _opDiag.FileName;
+            _fileName = _openFileDialog.FileName;
 
             if ((_fileName == null) || (_fileName == ""))
             {
@@ -55,6 +60,40 @@ namespace COMP123_S2019_Assignment05
                 Program.FileName = _fileName;
                 this.ApplicationMessage("Previously saved file has been loaded!", "Dollar Computers",
                     "OpenSavedOrder");
+            }
+        }
+
+        private void ProductInfoFormSaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.SaveOrderToFile();
+        }
+
+        private void SaveOrderToFile()
+        {
+            try
+            {
+                SaveFileDialog _saveFileDialog = new SaveFileDialog();
+                _saveFileDialog.Filter = "Text Files (*.txt)|(*.txt)| All Files (*.*)|(*.*)";
+                _saveFileDialog.Title = "Dollar Computers";
+                _saveFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+                _saveFileDialog.FileName = "Product.txt";
+                _saveFileDialog.ShowDialog();
+
+                using (StreamWriter _wrData = new StreamWriter(_saveFileDialog.FileName))
+                {
+                    _wrData.WriteLine(this.ProductIDTextBox.Text);
+                    _wrData.Close();
+                    _wrData.Dispose();
+
+                    MessageBox.Show($"Successfully save file!", "Dollar Computers",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unable to save file due to error: {ex.Message}", "Dollar Computers",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 

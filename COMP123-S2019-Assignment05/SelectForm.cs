@@ -57,11 +57,14 @@ namespace COMP123_S2019_Assignment05
                     DollarComputersFields.Manufacturer + " " +
                     DollarComputersFields.Model + " " +
                     DollarComputersFields.Cost;
+
+                this.NextButton.Enabled = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Dollar Computers",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.NextButton.Enabled = false;
             }
         }
 

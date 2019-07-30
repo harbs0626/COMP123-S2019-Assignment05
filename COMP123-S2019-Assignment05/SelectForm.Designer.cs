@@ -76,15 +76,18 @@
             // 
             // DollarComputerHardwareListButton
             // 
-            this.DollarComputerHardwareListButton.Location = new System.Drawing.Point(12, 12);
+            this.DollarComputerHardwareListButton.Location = new System.Drawing.Point(13, 14);
+            this.DollarComputerHardwareListButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DollarComputerHardwareListButton.Name = "DollarComputerHardwareListButton";
-            this.DollarComputerHardwareListButton.Size = new System.Drawing.Size(200, 23);
+            this.DollarComputerHardwareListButton.Size = new System.Drawing.Size(300, 37);
             this.DollarComputerHardwareListButton.TabIndex = 0;
             this.DollarComputerHardwareListButton.Text = "DollarComputer Hardware List";
             this.DollarComputerHardwareListButton.UseVisualStyleBackColor = true;
             // 
             // DollarComputerHardwareListGridView
             // 
+            this.DollarComputerHardwareListGridView.AllowUserToAddRows = false;
+            this.DollarComputerHardwareListGridView.AllowUserToDeleteRows = false;
             this.DollarComputerHardwareListGridView.AutoGenerateColumns = false;
             this.DollarComputerHardwareListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DollarComputerHardwareListGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -120,10 +123,11 @@
             this.powerDataGridViewTextBoxColumn,
             this.webcamDataGridViewTextBoxColumn});
             this.DollarComputerHardwareListGridView.DataSource = this.productsBindingSource;
-            this.DollarComputerHardwareListGridView.Location = new System.Drawing.Point(12, 41);
+            this.DollarComputerHardwareListGridView.Location = new System.Drawing.Point(13, 61);
+            this.DollarComputerHardwareListGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DollarComputerHardwareListGridView.Name = "DollarComputerHardwareListGridView";
             this.DollarComputerHardwareListGridView.ReadOnly = true;
-            this.DollarComputerHardwareListGridView.Size = new System.Drawing.Size(776, 368);
+            this.DollarComputerHardwareListGridView.Size = new System.Drawing.Size(858, 436);
             this.DollarComputerHardwareListGridView.TabIndex = 1;
             this.DollarComputerHardwareListGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DollarComputerHardwareListGridView_CellClick);
             // 
@@ -356,18 +360,21 @@
             // 
             // YourSelectionLabel
             // 
-            this.YourSelectionLabel.AutoSize = true;
-            this.YourSelectionLabel.Location = new System.Drawing.Point(9, 420);
+            this.YourSelectionLabel.Location = new System.Drawing.Point(13, 507);
+            this.YourSelectionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.YourSelectionLabel.Name = "YourSelectionLabel";
-            this.YourSelectionLabel.Size = new System.Drawing.Size(76, 13);
+            this.YourSelectionLabel.Size = new System.Drawing.Size(114, 40);
             this.YourSelectionLabel.TabIndex = 2;
-            this.YourSelectionLabel.Text = "Your Selection";
+            this.YourSelectionLabel.Text = "Your Selection:";
+            this.YourSelectionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // NextButton
             // 
-            this.NextButton.Location = new System.Drawing.Point(713, 415);
+            this.NextButton.Enabled = false;
+            this.NextButton.Location = new System.Drawing.Point(761, 507);
+            this.NextButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(75, 23);
+            this.NextButton.Size = new System.Drawing.Size(110, 40);
             this.NextButton.TabIndex = 3;
             this.NextButton.Text = "Next";
             this.NextButton.UseVisualStyleBackColor = true;
@@ -375,9 +382,10 @@
             // 
             // Cancel_Button
             // 
-            this.Cancel_Button.Location = new System.Drawing.Point(632, 415);
+            this.Cancel_Button.Location = new System.Drawing.Point(643, 507);
+            this.Cancel_Button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Cancel_Button.Name = "Cancel_Button";
-            this.Cancel_Button.Size = new System.Drawing.Size(75, 23);
+            this.Cancel_Button.Size = new System.Drawing.Size(110, 40);
             this.Cancel_Button.TabIndex = 4;
             this.Cancel_Button.Text = "Cancel";
             this.Cancel_Button.UseVisualStyleBackColor = true;
@@ -385,10 +393,11 @@
             // 
             // YourSelectionTextBox
             // 
-            this.YourSelectionTextBox.Location = new System.Drawing.Point(91, 417);
+            this.YourSelectionTextBox.Location = new System.Drawing.Point(128, 513);
+            this.YourSelectionTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.YourSelectionTextBox.Name = "YourSelectionTextBox";
             this.YourSelectionTextBox.ReadOnly = true;
-            this.YourSelectionTextBox.Size = new System.Drawing.Size(535, 20);
+            this.YourSelectionTextBox.Size = new System.Drawing.Size(507, 29);
             this.YourSelectionTextBox.TabIndex = 5;
             this.YourSelectionTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -398,9 +407,9 @@
             // 
             // SelectForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.ControlBox = false;
             this.Controls.Add(this.YourSelectionTextBox);
             this.Controls.Add(this.Cancel_Button);
@@ -408,7 +417,9 @@
             this.Controls.Add(this.YourSelectionLabel);
             this.Controls.Add(this.DollarComputerHardwareListGridView);
             this.Controls.Add(this.DollarComputerHardwareListButton);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SelectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Your Computer";
