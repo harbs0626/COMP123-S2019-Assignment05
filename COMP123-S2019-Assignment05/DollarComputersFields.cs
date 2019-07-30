@@ -11,7 +11,5 @@ namespace COMP123_S2019_Assignment05
         public static string Manufacturer { get; set; }
         public static string Model { get; set; }
         public static string Cost { get; set; }
-
-
     }
 }
