@@ -21,12 +21,15 @@ namespace COMP123_S2019_Assignment05
         {
             ProductInfoForm productInfoForm = new ProductInfoForm();
             productInfoForm.Show();
+            //Program.Forms[FormName.ProductInfoForm.ToString()].Show();
             this.Hide();
         }
 
         private void SelectForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dollarComputersDataSet.products' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 
+            // 'dollarComputersDataSet.products' table. You can move, 
+            // or remove it, as needed.
             this.productsTableAdapter.Fill(this.dollarComputersDataSet.products);
 
         }
@@ -52,7 +55,9 @@ namespace COMP123_S2019_Assignment05
                 this.ClearDollarComputerFields();
                 while (_colIndex < _colCount)
                 {
-                    dollarComputersArray.Add(Convert.ToString(this.DollarComputerHardwareListGridView.Rows[_rowIndex].Cells[_colIndex].Value).Trim());
+                    var rowValue = this.DollarComputerHardwareListGridView.Rows[_rowIndex].Cells[_colIndex].Value;
+
+                    dollarComputersArray.Add(Convert.ToString(rowValue).Trim());
                     _colIndex += 1;
                 }
                 this.PopulateDollarComputerFields(dollarComputersArray);
@@ -77,8 +82,19 @@ namespace COMP123_S2019_Assignment05
             DollarComputersFields.ProductID = string.Empty;
             DollarComputersFields.Condition = string.Empty;
             DollarComputersFields.Cost = string.Empty;
+            DollarComputersFields.Platform = string.Empty;
             DollarComputersFields.Manufacturer = string.Empty;
+            DollarComputersFields.OS = string.Empty;
             DollarComputersFields.Model = string.Empty;
+            DollarComputersFields.Memory = string.Empty;
+            DollarComputersFields.LCDSize = string.Empty;
+            DollarComputersFields.HDD = string.Empty;
+            DollarComputersFields.CPUBrand = string.Empty;
+            DollarComputersFields.CPUNumber = string.Empty;
+            DollarComputersFields.CPUType = string.Empty;
+            DollarComputersFields.CPUSpeed = string.Empty;
+            DollarComputersFields.GPUType = string.Empty;
+            DollarComputersFields.WebCam = string.Empty;
         }
 
         private void PopulateDollarComputerFields(List<string> dollarComputerArray)
@@ -86,8 +102,19 @@ namespace COMP123_S2019_Assignment05
             DollarComputersFields.ProductID = dollarComputerArray[0];
             DollarComputersFields.Condition = dollarComputerArray[14];
             DollarComputersFields.Cost = Convert.ToDouble(dollarComputerArray[1]).ToString("C2").Trim();
+            DollarComputersFields.Platform = dollarComputerArray[16];
             DollarComputersFields.Manufacturer = dollarComputerArray[2];
+            DollarComputersFields.OS = dollarComputerArray[15];
             DollarComputersFields.Model = dollarComputerArray[3];
+            DollarComputersFields.Memory = dollarComputerArray[5];
+            DollarComputersFields.LCDSize = dollarComputerArray[7];
+            DollarComputersFields.HDD = dollarComputerArray[17];
+            DollarComputersFields.CPUBrand = dollarComputerArray[11];
+            DollarComputersFields.CPUNumber = dollarComputerArray[13];
+            DollarComputersFields.CPUType = dollarComputerArray[11];
+            DollarComputersFields.CPUSpeed = dollarComputerArray[12];
+            DollarComputersFields.GPUType = dollarComputerArray[19];
+            DollarComputersFields.WebCam = dollarComputerArray[30];
         }
 
         private void Cancel_Button_Click(object sender, EventArgs e)

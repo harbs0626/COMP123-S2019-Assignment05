@@ -20,7 +20,11 @@ namespace COMP123_S2019_Assignment05
 
         private void StartNewOrderButton_Click(object sender, EventArgs e)
         {
-            Program.Forms[FormName.SelectForm.ToString()].Show();
+            Program.BeginTag = "StartNewOrder";
+
+            SelectForm selectForm = new SelectForm();
+            selectForm.Show();
+            //Program.Forms[FormName.SelectForm.ToString()].Show();
             this.Hide();
         }
 
@@ -31,7 +35,11 @@ namespace COMP123_S2019_Assignment05
 
         private void OpenProductInfoForm()
         {
-            Program.Forms[FormName.ProductInfoForm.ToString()].Show();
+            Program.BeginTag = "OpenProductInfoForm";
+
+            ProductInfoForm productInfoForm = new ProductInfoForm();
+            productInfoForm.Show();
+            //Program.Forms[FormName.ProductInfoForm.ToString()].Show();
             this.Hide();
         }
 

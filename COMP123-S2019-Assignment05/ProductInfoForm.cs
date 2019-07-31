@@ -20,16 +20,21 @@ namespace COMP123_S2019_Assignment05
         
         private void ProductInfoForm_Load(object sender, EventArgs e)
         {
-            DialogResult _dResult =
-                MessageBox.Show("Do you want to open previously saved file?", "Dollar Computers",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            switch (_dResult)
+            switch (Program.BeginTag)
             {
-                case DialogResult.Yes:
-                    this.OpenOrderFromFile();
-                    break;
-                default:
+                case "StartNewOrder":
                     this.LoadSelectedRow();
+                    break;
+                case "OpenProductInfoForm":
+                    DialogResult _dResult =
+                        MessageBox.Show("Do you want to open previously saved file?", "Dollar Computers",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    switch (_dResult)
+                    {
+                        case DialogResult.Yes:
+                            this.OpenOrderFromFile();
+                            break;
+                    }
                     break;
             }
         }
@@ -39,6 +44,19 @@ namespace COMP123_S2019_Assignment05
             this.ProductIDTextBox.Text = DollarComputersFields.ProductID;
             this.ConditionTextBox.Text = DollarComputersFields.Condition;
             this.CostTextBox.Text = DollarComputersFields.Cost;
+            this.PlatformTextBox.Text = DollarComputersFields.Platform;
+            this.ManufacturerTextBox.Text = DollarComputersFields.Manufacturer;
+            this.OSTextBox.Text = DollarComputersFields.OS;
+            this.ModelTextBox.Text = DollarComputersFields.Model;
+            this.MemoryTextBox.Text = DollarComputersFields.Memory;
+            this.LCDSizeTextBox.Text = DollarComputersFields.LCDSize;
+            this.HDDTextBox.Text = DollarComputersFields.HDD;
+            this.CPUBrandTextBox.Text = DollarComputersFields.CPUBrand;
+            this.CPUTypeTextBox.Text = DollarComputersFields.CPUType;
+            this.CPUNumberTextBox.Text = DollarComputersFields.CPUNumber;
+            this.CPUSpeedTextBox.Text = DollarComputersFields.CPUSpeed;
+            this.GPUTypeTextBox.Text = DollarComputersFields.GPUType;
+            this.WebCamTextBox.Text = DollarComputersFields.WebCam;
         }
 
         private void ProductInfoFormOpenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,14 +110,15 @@ namespace COMP123_S2019_Assignment05
                     _wrData.Close();
                     _wrData.Dispose();
 
-                    MessageBox.Show($"Successfully save file!", "Dollar Computers",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.ApplicationMessage("Successfully save file!", "Dollar Computers",
+                        "SaveOrderToFile");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Unable to save file due to error: {ex.Message}", "Dollar Computers",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.ApplicationMessage($"Unable to save file due to error: {ex.Message}", "Dollar Computers",
+                    "ExceptionError");
+
                 return;
             }
         }
@@ -109,10 +128,12 @@ namespace COMP123_S2019_Assignment05
             switch (mode)
             {
                 case "OpenFileDialog":
+                case "ExceptionError":
                     MessageBox.Show(message, title,
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case "OpenSavedOrder":
+                case "SaveOrderToFile":
                     MessageBox.Show(message, title, 
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
@@ -121,15 +142,18 @@ namespace COMP123_S2019_Assignment05
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            Program.Forms[FormName.StartForm.ToString()].Show();
+            StartForm startForm = new StartForm();
+            startForm.Show();
+            //Program.Forms[FormName.StartForm.ToString()].Show();
             this.Close();
         }
 
         private void SelectAnotherProduct_Click(object sender, EventArgs e)
         {
-            Program.Forms[FormName.SelectForm.ToString()].Show();
+            SelectForm selectForm = new SelectForm();
+            selectForm.Show();
+            //Program.Forms[FormName.SelectForm.ToString()].Show();
             this.Hide();
-
         }
     }
 }

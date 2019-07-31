@@ -21,7 +21,7 @@ namespace COMP123_S2019_Assignment05
         public static string CPUBrand { get; set; }
         public static string CPUNumber { get; set; }
         public static string CPUType { get; set; }
-        public static string CPUSize { get; set; }
+        public static string CPUSpeed { get; set; }
         public static string GPUType { get; set; }
         public static string WebCam { get; set; }
     }

@@ -58,7 +58,7 @@
             this.HDDTextBox = new System.Windows.Forms.TextBox();
             this.HDDLabel = new System.Windows.Forms.Label();
             this.GPUTypeLabel = new System.Windows.Forms.Label();
-            this.CPUSizeTextBox = new System.Windows.Forms.TextBox();
+            this.CPUSpeedTextBox = new System.Windows.Forms.TextBox();
             this.CPUSizeLabel = new System.Windows.Forms.Label();
             this.CPUNumberTextBox = new System.Windows.Forms.TextBox();
             this.LCDSizeTextBox = new System.Windows.Forms.TextBox();
@@ -297,7 +297,7 @@
             this.TechSpecsGroupBox.Controls.Add(this.HDDTextBox);
             this.TechSpecsGroupBox.Controls.Add(this.HDDLabel);
             this.TechSpecsGroupBox.Controls.Add(this.GPUTypeLabel);
-            this.TechSpecsGroupBox.Controls.Add(this.CPUSizeTextBox);
+            this.TechSpecsGroupBox.Controls.Add(this.CPUSpeedTextBox);
             this.TechSpecsGroupBox.Controls.Add(this.CPUSizeLabel);
             this.TechSpecsGroupBox.Controls.Add(this.CPUNumberTextBox);
             this.TechSpecsGroupBox.Controls.Add(this.LCDSizeTextBox);
@@ -372,23 +372,23 @@
             this.GPUTypeLabel.TabIndex = 21;
             this.GPUTypeLabel.Text = "GPU Type - ";
             // 
-            // CPUSizeTextBox
+            // CPUSpeedTextBox
             // 
-            this.CPUSizeTextBox.Location = new System.Drawing.Point(362, 137);
-            this.CPUSizeTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.CPUSizeTextBox.Name = "CPUSizeTextBox";
-            this.CPUSizeTextBox.Size = new System.Drawing.Size(148, 29);
-            this.CPUSizeTextBox.TabIndex = 19;
+            this.CPUSpeedTextBox.Location = new System.Drawing.Point(362, 137);
+            this.CPUSpeedTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CPUSpeedTextBox.Name = "CPUSpeedTextBox";
+            this.CPUSpeedTextBox.Size = new System.Drawing.Size(148, 29);
+            this.CPUSpeedTextBox.TabIndex = 19;
             // 
             // CPUSizeLabel
             // 
             this.CPUSizeLabel.AutoSize = true;
-            this.CPUSizeLabel.Location = new System.Drawing.Point(282, 141);
+            this.CPUSizeLabel.Location = new System.Drawing.Point(283, 141);
             this.CPUSizeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CPUSizeLabel.Name = "CPUSizeLabel";
-            this.CPUSizeLabel.Size = new System.Drawing.Size(86, 21);
+            this.CPUSizeLabel.Size = new System.Drawing.Size(85, 21);
             this.CPUSizeLabel.TabIndex = 18;
-            this.CPUSizeLabel.Text = "CPU Size - ";
+            this.CPUSizeLabel.Text = "CPU Spd - ";
             // 
             // CPUNumberTextBox
             // 
@@ -587,7 +587,7 @@
         private System.Windows.Forms.TextBox HDDTextBox;
         private System.Windows.Forms.Label HDDLabel;
         private System.Windows.Forms.Label GPUTypeLabel;
-        private System.Windows.Forms.TextBox CPUSizeTextBox;
+        private System.Windows.Forms.TextBox CPUSpeedTextBox;
         private System.Windows.Forms.Label CPUSizeLabel;
         private System.Windows.Forms.TextBox CPUNumberTextBox;
         private System.Windows.Forms.TextBox LCDSizeTextBox;

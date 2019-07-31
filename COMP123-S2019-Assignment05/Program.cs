@@ -10,6 +10,8 @@ namespace COMP123_S2019_Assignment05
     {
         public static Dictionary<string, Form> Forms;
         public static string FileName { get; set; }
+
+        public static string BeginTag { get; set; }
        
         /// <summary>
         /// The main entry point for the application.
