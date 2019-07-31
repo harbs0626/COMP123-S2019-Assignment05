@@ -19,7 +19,8 @@ namespace COMP123_S2019_Assignment05
 
         private void NextButton_Click(object sender, EventArgs e)
         {
-            Program.Forms[FormName.ProductInfoForm.ToString()].Show();
+            ProductInfoForm productInfoForm = new ProductInfoForm();
+            productInfoForm.Show();
             this.Hide();
         }
 
@@ -42,17 +43,20 @@ namespace COMP123_S2019_Assignment05
             {
                 this.DollarComputerHardwareListGridView.Rows[_rowIndex].Selected = true;
 
-                DollarComputersFields.Manufacturer = string.Empty;
-                DollarComputersFields.Model = string.Empty;
-                DollarComputersFields.Cost = string.Empty;
+                int _colCount = 0;
+                _colCount = this.DollarComputerHardwareListGridView.Columns.Count;
 
-                DollarComputersFields.Manufacturer = 
-                    Convert.ToString(this.DollarComputerHardwareListGridView.Rows[_rowIndex].Cells[2].Value).Trim();
-                DollarComputersFields.Model = 
-                    Convert.ToString(this.DollarComputerHardwareListGridView.Rows[_rowIndex].Cells[3].Value).Trim();
-                DollarComputersFields.Cost = 
-                    Convert.ToDouble(this.DollarComputerHardwareListGridView.Rows[_rowIndex].Cells[1].Value).ToString("C2").Trim();
+                int _colIndex = 0;
+                List<string> dollarComputersArray = new List<string>();
 
+                this.ClearDollarComputerFields();
+                while (_colIndex < _colCount)
+                {
+                    dollarComputersArray.Add(Convert.ToString(this.DollarComputerHardwareListGridView.Rows[_rowIndex].Cells[_colIndex].Value).Trim());
+                    _colIndex += 1;
+                }
+                this.PopulateDollarComputerFields(dollarComputersArray);
+ 
                 this.YourSelectionTextBox.Text = 
                     DollarComputersFields.Manufacturer + " " +
                     DollarComputersFields.Model + " " +
@@ -66,6 +70,24 @@ namespace COMP123_S2019_Assignment05
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.NextButton.Enabled = false;
             }
+        }
+
+        private void ClearDollarComputerFields()
+        {
+            DollarComputersFields.ProductID = string.Empty;
+            DollarComputersFields.Condition = string.Empty;
+            DollarComputersFields.Cost = string.Empty;
+            DollarComputersFields.Manufacturer = string.Empty;
+            DollarComputersFields.Model = string.Empty;
+        }
+
+        private void PopulateDollarComputerFields(List<string> dollarComputerArray)
+        {
+            DollarComputersFields.ProductID = dollarComputerArray[0];
+            DollarComputersFields.Condition = dollarComputerArray[14];
+            DollarComputersFields.Cost = Convert.ToDouble(dollarComputerArray[1]).ToString("C2").Trim();
+            DollarComputersFields.Manufacturer = dollarComputerArray[2];
+            DollarComputersFields.Model = dollarComputerArray[3];
         }
 
         private void Cancel_Button_Click(object sender, EventArgs e)

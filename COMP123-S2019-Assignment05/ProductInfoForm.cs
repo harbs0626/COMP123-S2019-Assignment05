@@ -29,9 +29,16 @@ namespace COMP123_S2019_Assignment05
                     this.OpenOrderFromFile();
                     break;
                 default:
-                    //Do nothing
+                    this.LoadSelectedRow();
                     break;
             }
+        }
+
+        private void LoadSelectedRow()
+        {
+            this.ProductIDTextBox.Text = DollarComputersFields.ProductID;
+            this.ConditionTextBox.Text = DollarComputersFields.Condition;
+            this.CostTextBox.Text = DollarComputersFields.Cost;
         }
 
         private void ProductInfoFormOpenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -116,6 +123,13 @@ namespace COMP123_S2019_Assignment05
         {
             Program.Forms[FormName.StartForm.ToString()].Show();
             this.Close();
+        }
+
+        private void SelectAnotherProduct_Click(object sender, EventArgs e)
+        {
+            Program.Forms[FormName.SelectForm.ToString()].Show();
+            this.Hide();
+
         }
     }
 }
