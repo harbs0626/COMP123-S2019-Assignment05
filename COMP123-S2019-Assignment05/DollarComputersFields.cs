@@ -8,6 +8,7 @@ namespace COMP123_S2019_Assignment05
 {
     public class DollarComputersFields
     {
+        public static List<string> dollarComputersArray;
         public static string ProductID { get; set; }
         public static string Condition { get; set; }
         public static string Cost { get; set; }

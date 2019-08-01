@@ -19,9 +19,11 @@ namespace COMP123_S2019_Assignment05
 
         private void NextButton_Click(object sender, EventArgs e)
         {
+            Program.BeginTag = "SelectOrder";
+
             ProductInfoForm productInfoForm = new ProductInfoForm();
             productInfoForm.Show();
-            //Program.Forms[FormName.ProductInfoForm.ToString()].Show();
+            //Program.productInfoForm.Show();
             this.Hide();
         }
 
@@ -31,36 +33,37 @@ namespace COMP123_S2019_Assignment05
             // 'dollarComputersDataSet.products' table. You can move, 
             // or remove it, as needed.
             this.productsTableAdapter.Fill(this.dollarComputersDataSet.products);
-
         }
 
-        private void DollarComputerHardwareListGridView_CellClick(
-            object sender, DataGridViewCellEventArgs e)
+        private void SelectFormGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             this.SelectAllRow(e.RowIndex);
         }
+       
+        private int _colCount;
+        private int _colIndex;
 
-        private void SelectAllRow(int _rowIndex)
+        private void SelectAllRow(int rowIndex)
         {
             try
             {
-                this.DollarComputerHardwareListGridView.Rows[_rowIndex].Selected = true;
+                this.SelectFormGridView.Rows[rowIndex].Selected = true;
 
-                int _colCount = 0;
-                _colCount = this.DollarComputerHardwareListGridView.Columns.Count;
+                _colCount = 0;
+                _colIndex = 0;
 
-                int _colIndex = 0;
-                List<string> dollarComputersArray = new List<string>();
+                _colCount = this.SelectFormGridView.Columns.Count;
+                DollarComputersFields.dollarComputersArray = new List<string>();
 
                 this.ClearDollarComputerFields();
                 while (_colIndex < _colCount)
                 {
-                    var rowValue = this.DollarComputerHardwareListGridView.Rows[_rowIndex].Cells[_colIndex].Value;
+                    var rowValue = this.SelectFormGridView.Rows[rowIndex].Cells[_colIndex].Value;
+                    DollarComputersFields.dollarComputersArray.Add(Convert.ToString(rowValue).Trim());
 
-                    dollarComputersArray.Add(Convert.ToString(rowValue).Trim());
                     _colIndex += 1;
                 }
-                this.PopulateDollarComputerFields(dollarComputersArray);
+                this.PopulateDollarComputerFields(DollarComputersFields.dollarComputersArray);
  
                 this.YourSelectionTextBox.Text = 
                     DollarComputersFields.Manufacturer + " " +
@@ -109,7 +112,7 @@ namespace COMP123_S2019_Assignment05
             DollarComputersFields.Memory = dollarComputerArray[5];
             DollarComputersFields.LCDSize = dollarComputerArray[7];
             DollarComputersFields.HDD = dollarComputerArray[17];
-            DollarComputersFields.CPUBrand = dollarComputerArray[11];
+            DollarComputersFields.CPUBrand = dollarComputerArray[10];
             DollarComputersFields.CPUNumber = dollarComputerArray[13];
             DollarComputersFields.CPUType = dollarComputerArray[11];
             DollarComputersFields.CPUSpeed = dollarComputerArray[12];

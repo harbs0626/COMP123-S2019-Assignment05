@@ -1,6 +1,6 @@
 ﻿namespace COMP123_S2019_Assignment05
 {
-    partial class SplashScreen
+    partial class SplashForm
     {
         /// <summary>
         /// Required designer variable.

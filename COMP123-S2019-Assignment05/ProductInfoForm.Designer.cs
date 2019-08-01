@@ -128,6 +128,7 @@
             this.ProductInfoFormExitToolStripMenuItem1.Name = "ProductInfoFormExitToolStripMenuItem1";
             this.ProductInfoFormExitToolStripMenuItem1.Size = new System.Drawing.Size(118, 26);
             this.ProductInfoFormExitToolStripMenuItem1.Text = "E&xit";
+            this.ProductInfoFormExitToolStripMenuItem1.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // ProductInfoFormExitToolStripMenuItem
             // 
@@ -548,6 +549,7 @@
             this.Name = "ProductInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product Information Form";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProductInfoForm_FormClosing);
             this.Load += new System.EventHandler(this.ProductInfoForm_Load);
             this.ProductInfoFormMenuStrip.ResumeLayout(false);
             this.ProductInfoFormMenuStrip.PerformLayout();

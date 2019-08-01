@@ -8,7 +8,13 @@ namespace COMP123_S2019_Assignment05
 {
     static class Program
     {
-        public static Dictionary<string, Form> Forms;
+        public static SplashForm splashForm;
+        public static StartForm startForm;
+        public static SelectForm selectForm;
+        public static ProductInfoForm productInfoForm;
+        public static OrderForm orderForm;
+        public static AboutForm aboutForm;
+
         public static string FileName { get; set; }
 
         public static string BeginTag { get; set; }
@@ -22,14 +28,14 @@ namespace COMP123_S2019_Assignment05
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Forms = new Dictionary<string, Form>();
-            Forms.Add("SplashScreen", new SplashScreen());
-            Forms.Add("StartForm", new StartForm());
-            Forms.Add("SelectForm", new SelectForm());
-            Forms.Add("ProductInfoForm", new ProductInfoForm());
-            Forms.Add("OrderForm", new OrderForm());
+            splashForm = new SplashForm();
+            startForm = new StartForm();
+            selectForm = new SelectForm();
+            productInfoForm = new ProductInfoForm();
+            orderForm = new OrderForm();
+            aboutForm = new AboutForm();
 
-            Application.Run(Forms[FormName.SplashScreen.ToString()]);
+            Application.Run(splashForm);
         }
     }
 }

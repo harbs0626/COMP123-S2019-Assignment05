@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.DollarComputerHardwareListButton = new System.Windows.Forms.Button();
-            this.DollarComputerHardwareListGridView = new System.Windows.Forms.DataGridView();
+            this.SelectFormGridView = new System.Windows.Forms.DataGridView();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.manufacturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +69,7 @@
             this.Cancel_Button = new System.Windows.Forms.Button();
             this.YourSelectionTextBox = new System.Windows.Forms.TextBox();
             this.productsTableAdapter = new COMP123_S2019_Assignment05.DollarComputersDataSetTableAdapters.productsTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DollarComputerHardwareListGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SelectFormGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dollarComputersDataSet)).BeginInit();
             this.SuspendLayout();
@@ -84,13 +84,13 @@
             this.DollarComputerHardwareListButton.Text = "DollarComputer Hardware List";
             this.DollarComputerHardwareListButton.UseVisualStyleBackColor = true;
             // 
-            // DollarComputerHardwareListGridView
+            // SelectFormGridView
             // 
-            this.DollarComputerHardwareListGridView.AllowUserToAddRows = false;
-            this.DollarComputerHardwareListGridView.AllowUserToDeleteRows = false;
-            this.DollarComputerHardwareListGridView.AutoGenerateColumns = false;
-            this.DollarComputerHardwareListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DollarComputerHardwareListGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SelectFormGridView.AllowUserToAddRows = false;
+            this.SelectFormGridView.AllowUserToDeleteRows = false;
+            this.SelectFormGridView.AutoGenerateColumns = false;
+            this.SelectFormGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SelectFormGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productIDDataGridViewTextBoxColumn,
             this.costDataGridViewTextBoxColumn,
             this.manufacturerDataGridViewTextBoxColumn,
@@ -122,14 +122,14 @@
             this.mousttypeDataGridViewTextBoxColumn,
             this.powerDataGridViewTextBoxColumn,
             this.webcamDataGridViewTextBoxColumn});
-            this.DollarComputerHardwareListGridView.DataSource = this.productsBindingSource;
-            this.DollarComputerHardwareListGridView.Location = new System.Drawing.Point(13, 61);
-            this.DollarComputerHardwareListGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.DollarComputerHardwareListGridView.Name = "DollarComputerHardwareListGridView";
-            this.DollarComputerHardwareListGridView.ReadOnly = true;
-            this.DollarComputerHardwareListGridView.Size = new System.Drawing.Size(858, 436);
-            this.DollarComputerHardwareListGridView.TabIndex = 1;
-            this.DollarComputerHardwareListGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DollarComputerHardwareListGridView_CellClick);
+            this.SelectFormGridView.DataSource = this.productsBindingSource;
+            this.SelectFormGridView.Location = new System.Drawing.Point(13, 61);
+            this.SelectFormGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SelectFormGridView.Name = "SelectFormGridView";
+            this.SelectFormGridView.ReadOnly = true;
+            this.SelectFormGridView.Size = new System.Drawing.Size(858, 436);
+            this.SelectFormGridView.TabIndex = 1;
+            this.SelectFormGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelectFormGridView_CellClick);
             // 
             // productIDDataGridViewTextBoxColumn
             // 
@@ -415,7 +415,7 @@
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.YourSelectionLabel);
-            this.Controls.Add(this.DollarComputerHardwareListGridView);
+            this.Controls.Add(this.SelectFormGridView);
             this.Controls.Add(this.DollarComputerHardwareListButton);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -425,7 +425,7 @@
             this.Text = "Select Your Computer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectForm_FormClosing);
             this.Load += new System.EventHandler(this.SelectForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DollarComputerHardwareListGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SelectFormGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dollarComputersDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -436,7 +436,7 @@
         #endregion
 
         private System.Windows.Forms.Button DollarComputerHardwareListButton;
-        private System.Windows.Forms.DataGridView DollarComputerHardwareListGridView;
+        private System.Windows.Forms.DataGridView SelectFormGridView;
         private System.Windows.Forms.Label YourSelectionLabel;
         private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.Button Cancel_Button;

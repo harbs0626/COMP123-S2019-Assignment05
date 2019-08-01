@@ -17,10 +17,11 @@ C:\Users\Harbs\source\repos\Practice_Projects\COMP123-S2019-Assignment05\COMP123
 C:\Users\Harbs\source\repos\Practice_Projects\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123_S2019_Assignment05.ProductInfoForm.resources
 C:\Users\Harbs\source\repos\Practice_Projects\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123_S2019_Assignment05.Properties.Resources.resources
 C:\Users\Harbs\source\repos\Practice_Projects\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123_S2019_Assignment05.SelectForm.resources
-C:\Users\Harbs\source\repos\Practice_Projects\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123_S2019_Assignment05.SplashScreen.resources
 C:\Users\Harbs\source\repos\Practice_Projects\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123_S2019_Assignment05.StartForm.resources
 C:\Users\Harbs\source\repos\Practice_Projects\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123-S2019-Assignment05.csproj.GenerateResource.cache
 C:\Users\Harbs\source\repos\Practice_Projects\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123-S2019-Assignment05.csproj.CoreCompileInputs.cache
 C:\Users\Harbs\source\repos\Practice_Projects\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123-S2019-Assignment05.exe
 C:\Users\Harbs\source\repos\Practice_Projects\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123-S2019-Assignment05.pdb
 C:\Users\Harbs\source\repos\Practice_Projects\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123-S2019-Assignment05.csprojAssemblyReference.cache
+C:\Users\Harbs\source\repos\Practice_Projects\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123_S2019_Assignment05.AboutForm.resources
+C:\Users\Harbs\source\repos\Practice_Projects\COMP123-S2019-Assignment05\COMP123-S2019-Assignment05\obj\Debug\COMP123_S2019_Assignment05.SplashForm.resources

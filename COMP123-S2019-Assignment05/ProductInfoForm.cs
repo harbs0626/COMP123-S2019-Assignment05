@@ -23,6 +23,7 @@ namespace COMP123_S2019_Assignment05
             switch (Program.BeginTag)
             {
                 case "StartNewOrder":
+                case "SelectOrder":
                     this.LoadSelectedRow();
                     break;
                 case "OpenProductInfoForm":
@@ -68,24 +69,54 @@ namespace COMP123_S2019_Assignment05
         {
             OpenFileDialog _openFileDialog = new OpenFileDialog();
             _openFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
-            _openFileDialog.Filter = "Text Files (*.txt)|(*.txt)| All Files (*.*)|(*.*)";
-            _openFileDialog.ShowDialog();
+            _openFileDialog.Filter = "Text Files (*.txt) |*.txt| All Files (*.*) |*.*";
 
-            string _fileName = string.Empty;
-            _fileName = _openFileDialog.FileName;
-
-            if ((_fileName == null) || (_fileName == ""))
+            var result = _openFileDialog.ShowDialog();
+            if (result != DialogResult.Cancel)
             {
-                this.ApplicationMessage("No file selected!", "Dollar Computers", 
-                    "OpenFileDialog");
-                return;
+                using (StreamReader _rdData = new StreamReader(_openFileDialog.FileName))
+                {
+                    DollarComputersFields.dollarComputersArray = new List<string>();
+
+                    string rdLine = string.Empty;
+                    while ((rdLine = _rdData.ReadLine()) != null){
+                        DollarComputersFields.dollarComputersArray.Add(rdLine.Remove(0, 3));
+                    }
+                    this.PopulateDollarComputerFields(DollarComputersFields.dollarComputersArray);
+                    this.LoadSelectedRow();
+
+                    _rdData.Close();
+                    _rdData.Dispose();
+
+                    this.ApplicationMessage("Successfully read file!", "Dollar Computers",
+                        "ReadOrderFromFile");
+                }
             }
             else
             {
-                Program.FileName = _fileName;
-                this.ApplicationMessage("Previously saved file has been loaded!", "Dollar Computers",
-                    "OpenSavedOrder");
+                this.ApplicationMessage("File was not read!", "Dollar Computers",
+                    "ReadOrderFromFileError");
             }
+        }
+
+        private void PopulateDollarComputerFields(List<string> dollarComputerArray)
+        {
+            DollarComputersFields.ProductID = dollarComputerArray[0].Trim();
+            DollarComputersFields.Condition = dollarComputerArray[1].Trim();
+            DollarComputersFields.Cost = dollarComputerArray[2].Trim();
+            DollarComputersFields.Platform = dollarComputerArray[3].Trim();
+            DollarComputersFields.Manufacturer = dollarComputerArray[4].Trim();
+            DollarComputersFields.OS = dollarComputerArray[5].Trim();
+            DollarComputersFields.Model = dollarComputerArray[6].Trim();
+            DollarComputersFields.Memory = dollarComputerArray[7].Trim();
+            DollarComputersFields.LCDSize = dollarComputerArray[8].Trim();
+            DollarComputersFields.HDD = dollarComputerArray[9].Trim();
+            DollarComputersFields.CPUBrand = dollarComputerArray[10].Trim();
+            DollarComputersFields.CPUNumber = dollarComputerArray[11].Trim();
+            DollarComputersFields.CPUType = dollarComputerArray[11].Trim();
+            DollarComputersFields.CPUSpeed = dollarComputerArray[13].Trim();
+            DollarComputersFields.GPUType = dollarComputerArray[14].Trim();
+            DollarComputersFields.WebCam = dollarComputerArray[15].Trim();
         }
 
         private void ProductInfoFormSaveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -98,20 +129,44 @@ namespace COMP123_S2019_Assignment05
             try
             {
                 SaveFileDialog _saveFileDialog = new SaveFileDialog();
-                _saveFileDialog.Filter = "Text Files (*.txt)|(*.txt)| All Files (*.*)|(*.*)";
+                _saveFileDialog.Filter = "Text Files (*.txt) |*.txt| All Files (*.*) |*.*";
                 _saveFileDialog.Title = "Dollar Computers";
                 _saveFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
                 _saveFileDialog.FileName = "Product.txt";
-                _saveFileDialog.ShowDialog();
 
-                using (StreamWriter _wrData = new StreamWriter(_saveFileDialog.FileName))
+                var result = _saveFileDialog.ShowDialog();
+                if (result != DialogResult.Cancel)
                 {
-                    _wrData.WriteLine(this.ProductIDTextBox.Text);
-                    _wrData.Close();
-                    _wrData.Dispose();
+                    using (StreamWriter _wrData = new StreamWriter(_saveFileDialog.FileName))
+                    {
+                        _wrData.WriteLine("00|" + this.ProductIDTextBox.Text);
+                        _wrData.WriteLine("01|" + this.ConditionTextBox.Text);
+                        _wrData.WriteLine("02|" + this.CostTextBox.Text);
+                        _wrData.WriteLine("03|" + this.PlatformTextBox.Text);
+                        _wrData.WriteLine("04|" + this.ManufacturerTextBox.Text);
+                        _wrData.WriteLine("05|" + this.OSTextBox.Text);
+                        _wrData.WriteLine("06|" + this.ModelTextBox.Text);
+                        _wrData.WriteLine("07|" + this.MemoryTextBox.Text);
+                        _wrData.WriteLine("08|" + this.LCDSizeTextBox.Text);
+                        _wrData.WriteLine("09|" + this.HDDTextBox.Text);
+                        _wrData.WriteLine("10|" + this.CPUBrandTextBox.Text);
+                        _wrData.WriteLine("11|" + this.CPUTypeTextBox.Text);
+                        _wrData.WriteLine("12|" + this.CPUNumberTextBox.Text);
+                        _wrData.WriteLine("13|" + this.CPUSpeedTextBox.Text);
+                        _wrData.WriteLine("14|" + this.GPUTypeTextBox.Text);
+                        _wrData.WriteLine("15|" + this.WebCamTextBox.Text);
+                        
+                        _wrData.Close();
+                        _wrData.Dispose();
 
-                    this.ApplicationMessage("Successfully save file!", "Dollar Computers",
-                        "SaveOrderToFile");
+                        this.ApplicationMessage("Successfully save file!", "Dollar Computers",
+                            "SaveOrderToFile");
+                    }
+                }
+                else
+                {
+                    this.ApplicationMessage("File was not saved!", "Dollar Computers",
+                        "SaveOrderToFileError");
                 }
             }
             catch (Exception ex)
@@ -127,12 +182,14 @@ namespace COMP123_S2019_Assignment05
         {
             switch (mode)
             {
-                case "OpenFileDialog":
                 case "ExceptionError":
+                case "ReadOrderFromFileError":
+                case "SaveOrderToFileError":
                     MessageBox.Show(message, title,
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case "OpenSavedOrder":
+                case "ReadOrderFromFile":
                 case "SaveOrderToFile":
                     MessageBox.Show(message, title, 
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -140,20 +197,28 @@ namespace COMP123_S2019_Assignment05
             }
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-            StartForm startForm = new StartForm();
-            startForm.Show();
-            //Program.Forms[FormName.StartForm.ToString()].Show();
-            this.Close();
-        }
-
         private void SelectAnotherProduct_Click(object sender, EventArgs e)
         {
-            SelectForm selectForm = new SelectForm();
-            selectForm.Show();
-            //Program.Forms[FormName.SelectForm.ToString()].Show();
+            //SelectForm selectForm = new SelectForm();
+            //selectForm.Show();
+            Program.selectForm.Show();
             this.Hide();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            DialogResult _dResult =
+                MessageBox.Show("Do you want to exit the program?", "Dollar Computers",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (_dResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void ProductInfoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

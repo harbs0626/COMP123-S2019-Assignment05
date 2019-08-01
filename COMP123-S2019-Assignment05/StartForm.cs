@@ -22,9 +22,9 @@ namespace COMP123_S2019_Assignment05
         {
             Program.BeginTag = "StartNewOrder";
 
-            SelectForm selectForm = new SelectForm();
-            selectForm.Show();
-            //Program.Forms[FormName.SelectForm.ToString()].Show();
+            //SelectForm selectForm = new SelectForm();
+            //selectForm.Show();
+            Program.selectForm.Show();
             this.Hide();
         }
 
@@ -37,9 +37,9 @@ namespace COMP123_S2019_Assignment05
         {
             Program.BeginTag = "OpenProductInfoForm";
 
-            ProductInfoForm productInfoForm = new ProductInfoForm();
-            productInfoForm.Show();
-            //Program.Forms[FormName.ProductInfoForm.ToString()].Show();
+            //ProductInfoForm productInfoForm = new ProductInfoForm();
+            //productInfoForm.Show();
+            Program.productInfoForm.Show();
             this.Hide();
         }
 
