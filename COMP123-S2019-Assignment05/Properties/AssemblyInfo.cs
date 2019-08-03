@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("COMP123-S2019-Assignment05")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Dollar Computers")]
+[assembly: AssemblyDescription("Other Details: Website - https://github.com/harbs0626/COMP123-S2019-Assignment05; ContactNumber - (416) 936-3687")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("COMP123-S2019-Assignment05")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCompany("Centennial College")]
+[assembly: AssemblyProduct("Dollar Computers")]
+[assembly: AssemblyCopyright("Copyright © 2019 HarbinRamo-301046044")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

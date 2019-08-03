@@ -6,7 +6,15 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/// <summary>
+/// 
+/// Course Name:    COMP123
+/// Course Section: Section 002
+/// Assignment:     #5-Dollar Computers
+/// Student Name:   Harbin Ramo
+/// Student Number: 301046044
+/// 
+/// </summary>
 namespace COMP123_S2019_Assignment05
 {
     public partial class AboutForm : Form
@@ -101,5 +109,10 @@ namespace COMP123_S2019_Assignment05
             }
         }
         #endregion
+
+        private void OkButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

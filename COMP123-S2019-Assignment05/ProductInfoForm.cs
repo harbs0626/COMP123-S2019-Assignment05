@@ -8,7 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
+/// <summary>
+/// 
+/// Course Name:    COMP123
+/// Course Section: Section 002
+/// Assignment:     #5-Dollar Computers
+/// Student Name:   Harbin Ramo
+/// Student Number: 301046044
+/// 
+/// </summary>
 namespace COMP123_S2019_Assignment05
 {
     public partial class ProductInfoForm : Form
@@ -173,7 +181,6 @@ namespace COMP123_S2019_Assignment05
             {
                 this.ApplicationMessage($"Unable to save file due to error: {ex.Message}", "Dollar Computers",
                     "ExceptionError");
-
                 return;
             }
         }
@@ -219,6 +226,27 @@ namespace COMP123_S2019_Assignment05
         private void ProductInfoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            Program.NextTag = Program.BeginTag;
+
+            switch (Program.BeginTag)
+            {
+                case "StartNewOrder":
+                case "SelectOrder":
+                    break;
+                case "OpenProductInfoForm":
+                    DollarComputersFields.dollarComputersOrder = 
+                        DollarComputersFields.dollarComputersArray.ToList();
+                    break;
+            }
+
+            OrderForm orderForm = new OrderForm();
+            orderForm.StartPosition = FormStartPosition.CenterScreen;
+            orderForm.Show();
+            this.Hide();
         }
     }
 }
