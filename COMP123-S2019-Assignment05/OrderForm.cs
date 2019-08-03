@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Printing;
+using Microsoft.VisualBasic.PowerPacks.Printing;
 /// <summary>
 /// 
 /// Course Name:    COMP123
@@ -42,8 +43,8 @@ namespace COMP123_S2019_Assignment05
                         break;
                 }
 
-                this.ApplicationMessage("Data has been loaded!", "Dollar Computers",
-                    "OpenOrder");
+                //this.ApplicationMessage("Data has been loaded!", "Dollar Computers",
+                //    "OpenOrder");
             }
             catch (Exception ex)
             {
@@ -130,6 +131,8 @@ namespace COMP123_S2019_Assignment05
             {
                 this.OrderFormPrintForm.PrintFileName = Directory.GetCurrentDirectory() + "\\OrderFormSlip.txt";
                 this.OrderFormPrintForm.PrintAction = PrintAction.PrintToPreview;
+                this.OrderFormPrintForm.Print(this, PrintForm.PrintOption.ClientAreaOnly);
+                this.Refresh();
             }
         }
         

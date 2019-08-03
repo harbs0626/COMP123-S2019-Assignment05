@@ -244,7 +244,6 @@ namespace COMP123_S2019_Assignment05
             }
 
             OrderForm orderForm = new OrderForm();
-            orderForm.StartPosition = FormStartPosition.CenterScreen;
             orderForm.Show();
             this.Hide();
         }
