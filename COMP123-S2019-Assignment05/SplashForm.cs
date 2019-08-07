@@ -25,11 +25,21 @@ namespace COMP123_S2019_Assignment05
             InitializeComponent();
         }
 
+        /// <summary>
+        /// This method enables the splash screen timer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SplashScreen_Load(object sender, EventArgs e)
         {
             this.SplashScreenTimer.Enabled = true;
         }
 
+        /// <summary>
+        /// This method disables the splash screen timer and opens StartForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SplashScreenTimer_Tick(object sender, EventArgs e)
         {
             this.SplashScreenTimer.Enabled = false;

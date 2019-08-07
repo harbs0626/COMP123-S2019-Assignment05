@@ -654,7 +654,6 @@
             // 
             this.OrderFormImage.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.OrderFormImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.OrderFormImage.Image = global::COMP123_S2019_Assignment05.Properties.Resources.acer;
             this.OrderFormImage.Location = new System.Drawing.Point(557, 56);
             this.OrderFormImage.Name = "OrderFormImage";
             this.OrderFormImage.Size = new System.Drawing.Size(150, 150);

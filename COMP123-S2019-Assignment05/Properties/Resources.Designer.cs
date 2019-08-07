@@ -93,6 +93,16 @@ namespace COMP123_S2019_Assignment05.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap centennialLogo {
+            get {
+                object obj = ResourceManager.GetObject("centennialLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cybertronpc {
             get {
                 object obj = ResourceManager.GetObject("cybertronpc", resourceCulture);
@@ -156,6 +166,16 @@ namespace COMP123_S2019_Assignment05.Properties {
         internal static System.Drawing.Bitmap imac {
             get {
                 object obj = ResourceManager.GetObject("imac", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lenovo {
+            get {
+                object obj = ResourceManager.GetObject("Lenovo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

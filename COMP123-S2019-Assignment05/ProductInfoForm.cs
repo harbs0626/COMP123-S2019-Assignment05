@@ -26,6 +26,13 @@ namespace COMP123_S2019_Assignment05
             InitializeComponent();
         }
         
+        /// <summary>
+        /// This method manages the Product Info Form 
+        /// either opening the data from the database or 
+        /// from a saved file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ProductInfoForm_Load(object sender, EventArgs e)
         {
             switch (Program.BeginTag)
@@ -48,6 +55,10 @@ namespace COMP123_S2019_Assignment05
             }
         }
 
+        /// <summary>
+        /// This method loads the item that were stored 
+        /// temporarily from the DollarComputersFields class
+        /// </summary>
         private void LoadSelectedRow()
         {
             this.ProductIDTextBox.Text = DollarComputersFields.ProductID;
@@ -68,11 +79,47 @@ namespace COMP123_S2019_Assignment05
             this.WebCamTextBox.Text = DollarComputersFields.WebCam;
         }
 
+        /// <summary>
+        /// This method stores temporarily to the 
+        /// DollarComputersFields class going to Order Form
+        /// </summary>
+        private void LoadNextRow()
+        {
+            DollarComputersFields.ProductID = this.ProductIDTextBox.Text;
+            DollarComputersFields.Condition = this.ConditionTextBox.Text;
+            DollarComputersFields.Cost = this.CostTextBox.Text;
+            DollarComputersFields.Platform = this.PlatformTextBox.Text;
+            DollarComputersFields.Manufacturer = this.ManufacturerTextBox.Text;
+            DollarComputersFields.OS = this.OSTextBox.Text;
+            DollarComputersFields.Model = this.ModelTextBox.Text;
+            DollarComputersFields.Memory = this.MemoryTextBox.Text;
+            DollarComputersFields.LCDSize = this.LCDSizeTextBox.Text;
+            DollarComputersFields.HDD = this.HDDTextBox.Text;
+            DollarComputersFields.CPUBrand = this.CPUBrandTextBox.Text;
+            DollarComputersFields.CPUType = this.CPUTypeTextBox.Text;
+            DollarComputersFields.CPUNumber = this.CPUNumberTextBox.Text;
+            DollarComputersFields.CPUSpeed = this.CPUSpeedTextBox.Text;
+            DollarComputersFields.GPUType = this.GPUTypeTextBox.Text;
+            DollarComputersFields.WebCam = this.WebCamTextBox.Text;
+        }
+
+        /// <summary>
+        /// This method manages the file being opened from the 
+        /// OpenOrderFromFile method and load into the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ProductInfoFormOpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.OpenOrderFromFile();
         }
 
+        /// <summary>
+        /// This method stores the data from the file to a List then passed
+        /// to PopulateDollarComputerFields method.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OpenOrderFromFile()
         {
             OpenFileDialog _openFileDialog = new OpenFileDialog();
@@ -107,6 +154,10 @@ namespace COMP123_S2019_Assignment05
             }
         }
 
+        /// <summary>
+        /// This method manages the List from the file to the Dollar Computer Fields class
+        /// </summary>
+        /// <param name="dollarComputerArray"></param>
         private void PopulateDollarComputerFields(List<string> dollarComputerArray)
         {
             DollarComputersFields.ProductID = dollarComputerArray[0].Trim();
@@ -127,11 +178,19 @@ namespace COMP123_S2019_Assignment05
             DollarComputersFields.WebCam = dollarComputerArray[15].Trim();
         }
 
+        /// <summary>
+        /// This method calls the SaveOrderToFile method
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ProductInfoFormSaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.SaveOrderToFile();
         }
 
+        /// <summary>
+        /// This method saves the data to a text file
+        /// </summary>
         private void SaveOrderToFile()
         {
             try
@@ -185,6 +244,12 @@ namespace COMP123_S2019_Assignment05
             }
         }
 
+        /// <summary>
+        /// This method manages the messageboxes to be used in the form
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="title"></param>
+        /// <param name="mode"></param>
         private void ApplicationMessage(string message, string title, string mode)
         {
             switch (mode)
@@ -204,14 +269,22 @@ namespace COMP123_S2019_Assignment05
             }
         }
 
+        /// <summary>
+        /// This method opens the Select Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectAnotherProduct_Click(object sender, EventArgs e)
         {
-            //SelectForm selectForm = new SelectForm();
-            //selectForm.Show();
             Program.selectForm.Show();
             this.Hide();
         }
 
+        /// <summary>
+        /// This method cancels or exits the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
             DialogResult _dResult =
@@ -223,11 +296,22 @@ namespace COMP123_S2019_Assignment05
             }
         }
 
+        /// <summary>
+        /// This method completely closes the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ProductInfoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// This method opens the Order Form and pass the list 
+        /// collection to the Order Form for further processing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NextButton_Click(object sender, EventArgs e)
         {
             Program.NextTag = Program.BeginTag;
@@ -238,8 +322,15 @@ namespace COMP123_S2019_Assignment05
                 case "SelectOrder":
                     break;
                 case "OpenProductInfoForm":
-                    DollarComputersFields.dollarComputersOrder = 
-                        DollarComputersFields.dollarComputersArray.ToList();
+                    if (DollarComputersFields.dollarComputersArray != null)
+                    {
+                        DollarComputersFields.dollarComputersOrder =
+                            DollarComputersFields.dollarComputersArray.ToList();
+                    }
+                    else
+                    {
+                        this.LoadNextRow();
+                    }
                     break;
             }
 

@@ -29,6 +29,11 @@ namespace COMP123_S2019_Assignment05
             InitializeComponent();
         }
         
+        /// <summary>
+        /// This method loads the data from the Product Info Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OrderForm_Load(object sender, EventArgs e)
         {
             try
@@ -36,16 +41,20 @@ namespace COMP123_S2019_Assignment05
                 switch (Program.NextTag)
                 {
                     case "OpenProductInfoForm":
-                        this.PopulateDollarComputerFields(DollarComputersFields.dollarComputersOrder);
-                        this.LoadSelectedRow();
+                        if (DollarComputersFields.dollarComputersOrder != null)
+                        {
+                            this.PopulateDollarComputerFields(DollarComputersFields.dollarComputersOrder);
+                            this.LoadSelectedRow();
+                        }
+                        else
+                        {
+                            this.LoadSelectedRow();
+                        }
                         break;
                     default:
                         this.LoadSelectedRow();
                         break;
                 }
-
-                //this.ApplicationMessage("Data has been loaded!", "Dollar Computers",
-                //    "OpenOrder");
             }
             catch (Exception ex)
             {
@@ -54,7 +63,15 @@ namespace COMP123_S2019_Assignment05
                 return;
             }
         }
-        
+
+        /// <summary>
+        /// 1. This method loads the item that were stored 
+        /// temporarily from the DollarComputersFields class
+        /// 
+        /// 2. Loads the image from the resource.resx
+        /// 
+        /// 3. Compute the total cost after tax 
+        /// </summary>
         private void LoadSelectedRow()
         {
             this.ConditionTextBox.Text = DollarComputersFields.Condition;
@@ -73,10 +90,20 @@ namespace COMP123_S2019_Assignment05
             this.GPUTypeTextBox.Text = DollarComputersFields.GPUType;
             this.WebCamTextBox.Text = DollarComputersFields.WebCam;
 
-            this.LoadImage(DollarComputersFields.Manufacturer);
-            this.ComputeTotalCost(this.CostTextBox.Text);
+            if (DollarComputersFields.Manufacturer != string.Empty)
+            {
+                this.LoadImage(DollarComputersFields.Manufacturer);
+            }
+            if (this.CostTextBox.Text != string.Empty)
+            {
+                this.ComputeTotalCost(this.CostTextBox.Text);
+            }
         }
 
+        /// <summary>
+        /// This method loads the image depending on the selected manufacturer
+        /// </summary>
+        /// <param name="manufacturer"></param>
         private void LoadImage(string manufacturer)
         {
             switch (manufacturer.ToLower()) {
@@ -107,9 +134,18 @@ namespace COMP123_S2019_Assignment05
                 case "ibuypower":
                     this.OrderFormImage.Image = (Image)COMP123_S2019_Assignment05.Properties.Resources.ibuypower;
                     break;
+                case "lenovo":
+                    this.OrderFormImage.Image = (Image)COMP123_S2019_Assignment05.Properties.Resources.Lenovo;
+                    break;
             }
         }
 
+        /// <summary>
+        /// This method manages the file being opened from the 
+        /// OpenOrderFromFile method and load into the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PopulateDollarComputerFields(List<string> dollarComputerOrder)
         {
             DollarComputersFields.ProductID = dollarComputerOrder[0];
@@ -130,6 +166,11 @@ namespace COMP123_S2019_Assignment05
             DollarComputersFields.WebCam = dollarComputerOrder[15];
         }
 
+        /// <summary>
+        /// This method computes the total cost after tax
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComputeTotalCost(string cost)
         {
             double currCost = Convert.ToDouble(cost.ToString().Replace('$',' '));
@@ -137,6 +178,12 @@ namespace COMP123_S2019_Assignment05
             this.TotalTextBox.Text = Convert.ToDouble((currCost * currTax) + currCost).ToString("C2").Trim();
         }
 
+        /// <summary>
+        /// This method manages the messageboxes to be used in the form
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="title"></param>
+        /// <param name="mode"></param>
         private void ApplicationMessage(string message, string title, string mode)
         {
             switch (mode)
@@ -152,11 +199,22 @@ namespace COMP123_S2019_Assignment05
             }
         }
 
+        /// <summary>
+        /// This method opens the About Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OrderFormAboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Program.aboutForm.Show();
         }
 
+        /// <summary>
+        /// This method manages printing of receipts or orders
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="title"></param>
+        /// <param name="mode"></param>
         private void OrderFormPrintToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult _dResult =
@@ -170,7 +228,13 @@ namespace COMP123_S2019_Assignment05
                 this.Refresh();
             }
         }
-        
+
+        /// <summary>
+        /// This method calls the Product Info Form
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="title"></param>
+        /// <param name="mode"></param>
         private void BackButton_Click(object sender, EventArgs e)
         {
             ProductInfoForm productInfoForm = new ProductInfoForm();
@@ -178,6 +242,11 @@ namespace COMP123_S2019_Assignment05
             this.Hide();
         }
 
+        /// <summary>
+        /// This method cancels or exits the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
             DialogResult _dResult =
@@ -189,11 +258,21 @@ namespace COMP123_S2019_Assignment05
             }
         }
 
+        /// <summary>
+        /// This method completely closes the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OrderForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-
+        
+        /// <summary>
+        /// This method finalizes the Order Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FinishButton_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = 

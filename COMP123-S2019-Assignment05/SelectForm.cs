@@ -25,6 +25,11 @@ namespace COMP123_S2019_Assignment05
             InitializeComponent();
         }
 
+        /// <summary>
+        /// This method calls the Product Info Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NextButton_Click(object sender, EventArgs e)
         {
             Program.BeginTag = "SelectOrder";
@@ -35,6 +40,11 @@ namespace COMP123_S2019_Assignment05
             this.Hide();
         }
 
+        /// <summary>
+        /// This method loads the data from the database (DollarComputers)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 
@@ -43,11 +53,22 @@ namespace COMP123_S2019_Assignment05
             this.productsTableAdapter.Fill(this.dollarComputersDataSet.products);
         }
 
+        /// <summary>
+        /// This method selects all columns from a selected cell
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectFormGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             this.SelectAllRow(e.RowIndex);
         }
-       
+        
+        /// <summary>
+        /// This method populates the DollarComputersFields array and 
+        /// populates the YourSelection textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private int _colCount;
         private int _colIndex;
 
@@ -87,7 +108,12 @@ namespace COMP123_S2019_Assignment05
                 this.NextButton.Enabled = false;
             }
         }
-
+        
+        /// <summary>
+        /// This method clears the DollarComputersFields
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClearDollarComputerFields()
         {
             DollarComputersFields.ProductID = string.Empty;
@@ -108,6 +134,10 @@ namespace COMP123_S2019_Assignment05
             DollarComputersFields.WebCam = string.Empty;
         }
 
+        /// <summary>
+        /// This method manages the List from the selected row
+        /// </summary>
+        /// <param name="dollarComputerArray"></param>
         private void PopulateDollarComputerFields(List<string> dollarComputerArray)
         {
             DollarComputersFields.ProductID = dollarComputerArray[0];
@@ -128,6 +158,11 @@ namespace COMP123_S2019_Assignment05
             DollarComputersFields.WebCam = dollarComputerArray[30];
         }
 
+        /// <summary>
+        /// This method cancels or exits the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Cancel_Button_Click(object sender, EventArgs e)
         {
             DialogResult _dResult =
@@ -139,6 +174,11 @@ namespace COMP123_S2019_Assignment05
             }
         }
 
+        /// <summary>
+        /// This method completely closes the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

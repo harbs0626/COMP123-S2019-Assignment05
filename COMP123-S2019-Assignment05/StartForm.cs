@@ -26,31 +26,35 @@ namespace COMP123_S2019_Assignment05
             InitializeComponent();
         }
 
+        /// <summary>
+        /// This methods open the Select Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StartNewOrderButton_Click(object sender, EventArgs e)
         {
             Program.BeginTag = "StartNewOrder";
-
-            //SelectForm selectForm = new SelectForm();
-            //selectForm.Show();
             Program.selectForm.Show();
             this.Hide();
         }
 
+        /// <summary>
+        /// This method opens the Product Info Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OpenSavedOrderButton_Click(object sender, EventArgs e)
         {
-            this.OpenProductInfoForm();
-        }
-
-        private void OpenProductInfoForm()
-        {
             Program.BeginTag = "OpenProductInfoForm";
-
-            //ProductInfoForm productInfoForm = new ProductInfoForm();
-            //productInfoForm.Show();
             Program.productInfoForm.Show();
             this.Hide();
         }
 
+        /// <summary>
+        /// This method closes the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ExitForm_Click(object sender, EventArgs e)
         {
             DialogResult _dResult =
@@ -62,6 +66,11 @@ namespace COMP123_S2019_Assignment05
             }
         }
 
+        /// <summary>
+        /// This method completely closes the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StartForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
