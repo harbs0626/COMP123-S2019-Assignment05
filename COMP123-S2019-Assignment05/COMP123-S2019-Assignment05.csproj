@@ -167,6 +167,15 @@
     <None Include="exit.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Toshiba.jpg" />
+    <None Include="acer.jpg" />
+    <None Include="asus.jpg" />
+    <None Include="cybertronpc.jpg" />
+    <None Include="gateway.jpg" />
+    <None Include="hp.jpg" />
+    <None Include="ibuypower.jpg" />
+    <None Include="imac.jpg" />
+    <None Include="macpro.jpg" />
     <Content Include="money_icon.ico" />
   </ItemGroup>
   <ItemGroup />

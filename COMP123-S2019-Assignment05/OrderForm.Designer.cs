@@ -210,6 +210,7 @@
             // OSTextBox
             // 
             this.OSTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OSTextBox.Enabled = false;
             this.OSTextBox.Location = new System.Drawing.Point(131, 461);
             this.OSTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.OSTextBox.Name = "OSTextBox";
@@ -218,6 +219,7 @@
             // 
             // ConditionTextBox
             // 
+            this.ConditionTextBox.Enabled = false;
             this.ConditionTextBox.Location = new System.Drawing.Point(126, 32);
             this.ConditionTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ConditionTextBox.Name = "ConditionTextBox";
@@ -227,6 +229,7 @@
             // WebCamTextBox
             // 
             this.WebCamTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.WebCamTextBox.Enabled = false;
             this.WebCamTextBox.Location = new System.Drawing.Point(131, 424);
             this.WebCamTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.WebCamTextBox.Name = "WebCamTextBox";
@@ -235,6 +238,7 @@
             // 
             // PlatformTextBox
             // 
+            this.PlatformTextBox.Enabled = false;
             this.PlatformTextBox.Location = new System.Drawing.Point(371, 32);
             this.PlatformTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PlatformTextBox.Name = "PlatformTextBox";
@@ -243,6 +247,7 @@
             // 
             // ManufacturerTextBox
             // 
+            this.ManufacturerTextBox.Enabled = false;
             this.ManufacturerTextBox.Location = new System.Drawing.Point(126, 74);
             this.ManufacturerTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ManufacturerTextBox.Name = "ManufacturerTextBox";
@@ -252,6 +257,7 @@
             // GPUTypeTextBox
             // 
             this.GPUTypeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GPUTypeTextBox.Enabled = false;
             this.GPUTypeTextBox.Location = new System.Drawing.Point(131, 386);
             this.GPUTypeTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GPUTypeTextBox.Name = "GPUTypeTextBox";
@@ -271,6 +277,7 @@
             // HDDTextBox
             // 
             this.HDDTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.HDDTextBox.Enabled = false;
             this.HDDTextBox.Location = new System.Drawing.Point(131, 349);
             this.HDDTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.HDDTextBox.Name = "HDDTextBox";
@@ -279,6 +286,7 @@
             // 
             // ModelTextBox
             // 
+            this.ModelTextBox.Enabled = false;
             this.ModelTextBox.Location = new System.Drawing.Point(371, 74);
             this.ModelTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ModelTextBox.Name = "ModelTextBox";
@@ -298,6 +306,7 @@
             // CPUSpeedTextBox
             // 
             this.CPUSpeedTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CPUSpeedTextBox.Enabled = false;
             this.CPUSpeedTextBox.Location = new System.Drawing.Point(131, 312);
             this.CPUSpeedTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CPUSpeedTextBox.Name = "CPUSpeedTextBox";
@@ -317,6 +326,7 @@
             // CPUNumberTextBox
             // 
             this.CPUNumberTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CPUNumberTextBox.Enabled = false;
             this.CPUNumberTextBox.Location = new System.Drawing.Point(131, 273);
             this.CPUNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CPUNumberTextBox.Name = "CPUNumberTextBox";
@@ -336,6 +346,7 @@
             // CPUTypeTextBox
             // 
             this.CPUTypeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CPUTypeTextBox.Enabled = false;
             this.CPUTypeTextBox.Location = new System.Drawing.Point(131, 236);
             this.CPUTypeTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CPUTypeTextBox.Name = "CPUTypeTextBox";
@@ -345,6 +356,7 @@
             // LCDSizeTextBox
             // 
             this.LCDSizeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LCDSizeTextBox.Enabled = false;
             this.LCDSizeTextBox.Location = new System.Drawing.Point(131, 126);
             this.LCDSizeTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LCDSizeTextBox.Name = "LCDSizeTextBox";
@@ -354,6 +366,7 @@
             // CPUBrandTextBox
             // 
             this.CPUBrandTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CPUBrandTextBox.Enabled = false;
             this.CPUBrandTextBox.Location = new System.Drawing.Point(131, 199);
             this.CPUBrandTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CPUBrandTextBox.Name = "CPUBrandTextBox";
@@ -363,6 +376,7 @@
             // MemoryTextBox
             // 
             this.MemoryTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.MemoryTextBox.Enabled = false;
             this.MemoryTextBox.Location = new System.Drawing.Point(131, 163);
             this.MemoryTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MemoryTextBox.Name = "MemoryTextBox";
@@ -371,7 +385,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(126, 123);
             this.panel1.Name = "panel1";
@@ -640,6 +654,7 @@
             // 
             this.OrderFormImage.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.OrderFormImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.OrderFormImage.Image = global::COMP123_S2019_Assignment05.Properties.Resources.acer;
             this.OrderFormImage.Location = new System.Drawing.Point(557, 56);
             this.OrderFormImage.Name = "OrderFormImage";
             this.OrderFormImage.Size = new System.Drawing.Size(150, 150);

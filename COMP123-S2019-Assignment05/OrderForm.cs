@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.PowerPacks.Printing;
+using System.Resources;
 /// <summary>
 /// 
 /// Course Name:    COMP123
@@ -72,7 +73,41 @@ namespace COMP123_S2019_Assignment05
             this.GPUTypeTextBox.Text = DollarComputersFields.GPUType;
             this.WebCamTextBox.Text = DollarComputersFields.WebCam;
 
+            this.LoadImage(DollarComputersFields.Manufacturer);
             this.ComputeTotalCost(this.CostTextBox.Text);
+        }
+
+        private void LoadImage(string manufacturer)
+        {
+            switch (manufacturer.ToLower()) {
+                case "acer":
+                    this.OrderFormImage.Image = (Image)COMP123_S2019_Assignment05.Properties.Resources.acer;
+                    break;
+                case "asus":
+                    this.OrderFormImage.Image = (Image)COMP123_S2019_Assignment05.Properties.Resources.asus;
+                    break;
+                case "hp":
+                    this.OrderFormImage.Image = (Image)COMP123_S2019_Assignment05.Properties.Resources.hp;
+                    break;
+                case "imac":
+                    this.OrderFormImage.Image = (Image)COMP123_S2019_Assignment05.Properties.Resources.imac;
+                    break;
+                case "macpro":
+                    this.OrderFormImage.Image = (Image)COMP123_S2019_Assignment05.Properties.Resources.macpro;
+                    break;
+                case "toshiba":
+                    this.OrderFormImage.Image = (Image)COMP123_S2019_Assignment05.Properties.Resources.Toshiba;
+                    break;
+                case "cybertronpc":
+                    this.OrderFormImage.Image = (Image)COMP123_S2019_Assignment05.Properties.Resources.cybertronpc;
+                    break;
+                case "gateway":
+                    this.OrderFormImage.Image = (Image)COMP123_S2019_Assignment05.Properties.Resources.gateway;
+                    break;
+                case "ibuypower":
+                    this.OrderFormImage.Image = (Image)COMP123_S2019_Assignment05.Properties.Resources.ibuypower;
+                    break;
+            }
         }
 
         private void PopulateDollarComputerFields(List<string> dollarComputerOrder)
